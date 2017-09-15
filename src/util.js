@@ -54,7 +54,7 @@ function normalize(key, basePath) {
 function overrideThresholds(key, overrides, basePath) {
   let thresholds = {};
 
-  // First match wins
+  // First match wins, go thru overrides
   Object.keys(overrides).some(pattern => {
     if (minimatch(normalize(key, basePath), pattern, {dot: true})) {
       thresholds = overrides[pattern];
